@@ -1,3 +1,4 @@
+```markdown
 ---
 license: Apache-2.0
 task_categories:
@@ -27,7 +28,7 @@ size_categories:
 ## 📢 特别说明 (Availability Note)
 > ⚠️ **关于数据完整性**：
 > 由于 GitHub 文件大小限制，本仓库目前**仅直接提供 CPT (连续预训练) 部分**的数据文件。
-> **SFT (指令微调) 部分**包含高质量问答对，如需获取完整版 SFT 数据集，请查看底部的 [📧 联系方式](#-contact-联系方式)。
+> **SFT (指令微调) 部分**包含高质量问答对，如需获取完整版 SFT 数据集，请查看底部的 [📧 联系方式](#-contact-获取完整-sft-数据)。
 
 ---
 
@@ -82,10 +83,12 @@ size_categories:
 ```bash
 git clone [https://github.com/LuoDaa/CN-Grad-Consult-Dataset.git](https://github.com/LuoDaa/CN-Grad-Consult-Dataset.git)
 cd CN-Grad-Consult-Dataset
-Python 读取示例 (Pandas):
 
-Python
+```
 
+**Python 读取示例 (Pandas):**
+
+```python
 import pandas as pd
 import os
 
@@ -98,12 +101,18 @@ if os.path.exists(file_path):
     print(df.head())
 else:
     print("文件不存在，请检查路径")
-🔍 Data Schema (数据字段说明)
-1. CPT 文本格式 (本仓库包含)
-适用于 data/cpt/*.jsonl：
 
-JSON
+```
 
+---
+
+## 🔍 Data Schema (数据字段说明)
+
+### 1. CPT 文本格式 (本仓库包含)
+
+适用于 `data/cpt/*.jsonl`：
+
+```json
 {
     "text": "此处为长篇的政策文本或招生简章内容...",
     "meta": {
@@ -112,11 +121,14 @@ JSON
         "title": "文章标题"
     }
 }
-2. SFT 问答格式 (完整版包含)
-适用于 data/sft/*.jsonl：
 
-JSON
+```
 
+### 2. SFT 问答格式 (完整版包含)
+
+适用于 `data/sft/*.jsonl`：
+
+```json
 {
     "instruction": "请问北京大学计算机专硕的复试分数线是多少？",
     "input": "",
@@ -127,18 +139,28 @@ JSON
         "year": "2024"
     }
 }
-⚠️ Limitations (局限性与免责)
-时效性：考研政策与分数线每年更新，模型训练时请务必参考 meta 中的 year 字段，避免产生跨年份的知识幻觉。
 
-数据噪声：经验贴数据来源于网络公开分享，可能包含主观偏差或非正式用语，建议使用前进行清洗。
+```
 
-免责声明：本数据集仅供学术研究与大模型训练参考，实际报考信息请以研招网或各高校研究生院官方发布的最新通知为准。
+---
 
-📧 Contact (获取完整 SFT 数据)
-如果您需要获取 完整版 SFT 指令微调数据集 (包含所有问答对)，或者有商业合作、数据反馈需求，请通过以下方式联系：
+## ⚠️ Limitations (局限性与免责)
 
-Email: 864034128@qq.com
+1. **时效性**：考研政策与分数线每年更新，模型训练时请务必参考 `meta` 中的 `year` 字段，避免产生跨年份的知识幻觉。
+2. **数据噪声**：经验贴数据来源于网络公开分享，可能包含主观偏差或非正式用语，建议使用前进行清洗。
+3. **免责声明**：本数据集仅供学术研究与大模型训练参考，实际报考信息请以研招网或各高校研究生院官方发布的最新通知为准。
 
-邮件主题建议: [数据集申请] CN-Grad-Consult-Dataset 完整版申请
+---
 
-💡 申请时请简要说明您的使用用途（如：个人学习、学术研究、企业项目），以便快速通过审核。
+## 📧 Contact (获取完整 SFT 数据)
+
+如果您需要获取 **完整版 SFT 指令微调数据集** (包含所有问答对)，或者有商业合作、数据反馈需求，请通过以下方式联系：
+
+* **Email**: `864034128@qq.com`
+* **邮件主题建议**: `[数据集申请] CN-Grad-Consult-Dataset 完整版申请`
+
+> 💡 申请时请简要说明您的**使用用途**（如：个人学习、学术研究、企业项目），以便快速通过审核。
+
+```
+
+```
